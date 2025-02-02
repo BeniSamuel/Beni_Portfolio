@@ -1,8 +1,16 @@
 import React from 'react'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import Home from './pages/Home/Home'
 
 const App: React.FC  = () => {
   return (
-    <div className=' font-poppins text-xl'>Hello Beni Samuel</div>
+    <div>
+      <Router>
+        <Routes>
+          <Route path='/' element={<Home/>} />
+        </Routes>
+      </Router>
+    </div>
   )
 }
 
