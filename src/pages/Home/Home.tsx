@@ -4,18 +4,22 @@ import DynamicText from "../../components/Home/DynamicText";
 import myImage from "../../assets/Dashboard/Myimage.svg";
 import settings from "../../assets/Dashboard/settings.svg";
 import whiteMode from "../../assets/Dashboard/whiteMode.svg"
+import menu from "../../assets/Dashboard/menu.svg"
 
 const Home: React.FC = () => {
     return (
         <div>
             <DashMain>
-                <div className=" flex flex-row py-28 pl-10 items-center gap-16 relative">
+                <div className=" flex flex-col md:flex-row py-28 pl-10 items-center gap-16 relative">
+                    <div className=" absolute top-9 left-10 cursor-pointer md:hidden">
+                        <img src={menu}/>
+                    </div>
                     <div className=" absolute top-9 right-10 flex flex-col gap-4">
                         <div>
-                            <img src={settings} className=" h-4 w-4"/>
+                            <img src={settings} className=" h-4 w-4 cursor-pointer"/>
                         </div>
                         <div>
-                            <img src={whiteMode} className=" h-4 w-4"/>
+                            <img src={whiteMode} className=" h-4 w-4 cursor-pointer"/>
                         </div>
                     </div>
                     <div className=" flex flex-col gap-5">
