@@ -8,6 +8,9 @@ import Serviceicon from "../../assets/Dashboard/ServiceIcon.svg";
 import Projecticon from "../../assets/Dashboard/ProjectsIcon.svg";
 import Contacticon from "../../assets/Dashboard/ContactIcon.svg";
 import AboutActive from "../../assets/Dashboard/AboutActive.svg";
+import ServiceActive from "../../assets/Dashboard/ServiceActive.svg";
+import ProjectActive from "../../assets/Dashboard/ProjectsActive.svg";
+import ContactActive from "../../assets/Dashboard/ContactActive.svg";
 
 const DashLeft: React.FC = () => {
   const navigate = useNavigate();
@@ -52,19 +55,19 @@ const DashLeft: React.FC = () => {
 
         {/* Service */}
         <div className="flex flex-row items-center gap-3 cursor-pointer selection:bg-white" onClick={() => handleNavigation("service", "/service")}>
-          <img src={activeTab === "service" ? Homeicon : Serviceicon} className=" h-5 w-5" />
+          <img src={activeTab === "service" ? ServiceActive : Serviceicon} className=" h-5 w-5" />
           <span className={`font-poppins text-sm font-medium ${activeTab === "service" ? "text-[#ED2929] font-semibold" : "text-white"}`}>Service</span>
         </div>
 
         {/* Projects */}
         <div className="flex flex-row items-center gap-3 cursor-pointer selection:bg-white" onClick={() => handleNavigation("projects", "/projects")}>
-          <img src={activeTab === "projects" ? Homeicon : Projecticon} className=" h-5 w-5" />
+          <img src={activeTab === "projects" ? ProjectActive : Projecticon} className=" h-5 w-5" />
           <span className={`font-poppins text-sm font-medium ${activeTab === "projects" ? "text-[#ED2929] font-semibold" : "text-white"}`}>Projects</span>
         </div>
 
         {/* Contact */}
         <div className="flex flex-row items-center gap-3 cursor-pointer selection:bg-white" onClick={() => handleNavigation("contact", "/contact")}>
-          <img src={activeTab === "contact" ? Homeicon : Contacticon} className=" h-5 w-5" />
+          <img src={activeTab === "contact" ? ContactActive : Contacticon} className=" h-5 w-5" />
           <span className={`font-poppins text-sm font-medium ${activeTab === "contact" ? "text-[#ED2929] font-semibold" : "text-white"}`}>Contact</span>
         </div>
       </div>
