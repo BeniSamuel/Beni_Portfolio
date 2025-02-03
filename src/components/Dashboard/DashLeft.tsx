@@ -4,7 +4,7 @@ import Dashicon from "../../assets/Dashboard/DashIcon.svg";
 import Homeicon from "../../assets/Dashboard/HomeIcon.svg";
 import HomeiconActive from "../../assets/Dashboard/HomeINotActive.svg";
 import Abouticon from "../../assets/Dashboard/AboutIcon.svg";
-import Serviceicon from "../../assets/Dashboard/ServiceICon.svg";
+import Serviceicon from "../../assets/Dashboard/ServiceIcon.svg";
 import Projecticon from "../../assets/Dashboard/ProjectsIcon.svg";
 import Contacticon from "../../assets/Dashboard/ContactIcon.svg";
 import AboutActive from "../../assets/Dashboard/AboutActive.svg";
