@@ -30,7 +30,7 @@ const DashLeft: React.FC = () => {
   };
 
   return (
-    <div className=" bg-[#020202] h-[100vh] px-7 py-3 hidden md:flex md:flex-col gap-12 w-[15vw]">
+    <div className=" bg-[#020202] h-[100vh] px-7 py-3 hidden md:flex md:flex-col gap-[5rem] w-[15vw]">
       {/* Dashboard Icon */}
       <div onClick={() => handleNavigation("dashboard", "/")} className=" cursor-pointer selection:bg-[#ED2929]">
         <img src={Dashicon} className=" h-20 w-20" />

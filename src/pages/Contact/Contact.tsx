@@ -29,6 +29,7 @@ const Contact: React.FC = () => {
               <div className=" bg-[#ED2929] w-10 h-1 rounded-lg" />
             </div>
           </div>
+          
         </div>
         </DashMain>
     </div>

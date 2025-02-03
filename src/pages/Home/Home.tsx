@@ -10,7 +10,7 @@ const Home: React.FC = () => {
     return (
         <div>
             <DashMain>
-                <div className=" flex flex-col md:flex-row py-28 pl-10 items-center gap-16 relative">
+                <div className=" flex flex-col md:flex-row py-[8rem] pl-10 items-center gap-16 relative">
                     <div className=" absolute top-9 left-10 cursor-pointer md:hidden">
                         <img src={menu}/>
                     </div>
