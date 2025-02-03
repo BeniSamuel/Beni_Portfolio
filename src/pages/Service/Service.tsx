@@ -3,6 +3,9 @@ import DashMain from '../../components/Dashboard/DashMain'
 import menu from "../../assets/Dashboard/menu.svg"
 import settings from "../../assets/Dashboard/settings.svg"
 import whiteMode from "../../assets/Dashboard/whiteMode.svg"
+import ServiceWrapper from '../../components/Service/ServiceWrapper'
+import services from "../../Data/ServiceData";
+import services2 from '../../Data/ServiceData2'
 
 
 const Service: React.FC = () => {
@@ -22,7 +25,7 @@ const Service: React.FC = () => {
                         </div>
                     </div>
 
-                    <div className=' flex flex-col gap-2'>
+                    <div className=' flex flex-col gap-2 py-4'>
                         <p className=' font-poppins text-sm text-white font-semibold selection:bg-[#ED2929] '>Services</p>
                         <div className=' flex flex-col gap-1'>
                             <div className=' bg-[#ED2929] w-16 h-1 rounded-lg' />
@@ -30,7 +33,10 @@ const Service: React.FC = () => {
                         </div>
                     </div>
 
-                    
+                    <div className=' flex flex-col py-8 gap-12 pr-10 '>
+                        <ServiceWrapper services={services} />
+                        <ServiceWrapper services={services2}/>
+                    </div>
 
                 </div>
             </DashMain>
