@@ -20,7 +20,7 @@ const About: React.FC = () => {
                             <img src={whiteMode} className=" h-4 w-4 cursor-pointer" />
                         </div>
                     </div>
-                    <div className=' flex flex-col gap-2 py-12 '>
+                    <div className=' flex flex-col gap-2 py-12 md:py-0'>
                         <p className=' font-poppins text-sm text-white font-semibold selection:bg-[#ED2929] '>About Me</p>
                         <div className=' flex flex-col gap-1'>
                             <div className=' bg-[#ED2929] w-16 h-1 rounded-lg' />

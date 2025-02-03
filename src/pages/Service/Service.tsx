@@ -25,7 +25,7 @@ const Service: React.FC = () => {
                         </div>
                     </div>
 
-                    <div className=' flex flex-col gap-2 py-4'>
+                    <div className=' flex flex-col gap-2 py-4 md:py-0 '>
                         <p className=' font-poppins text-sm text-white font-semibold selection:bg-[#ED2929] '>Services</p>
                         <div className=' flex flex-col gap-1'>
                             <div className=' bg-[#ED2929] w-16 h-1 rounded-lg' />
