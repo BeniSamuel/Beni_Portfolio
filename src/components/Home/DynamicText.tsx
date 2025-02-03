@@ -10,7 +10,7 @@ const DynamicText: React.FC = () => {
                 "Frontend Developer",
                 "Mobile Developer",
                 "Desktop App Developer",
-                "Into Cybersurfing",
+                "Into Cybersecurity",
                 "Embedded Designer"  
             ]}
             loop = {Infinity}

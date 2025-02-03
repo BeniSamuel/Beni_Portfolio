@@ -32,38 +32,38 @@ const DashLeft: React.FC = () => {
   return (
     <div className=" bg-[#020202] h-[100vh] px-7 py-3 hidden md:flex md:flex-col gap-12 w-[15vw]">
       {/* Dashboard Icon */}
-      <div onClick={() => handleNavigation("dashboard", "/")} className=" cursor-pointer">
+      <div onClick={() => handleNavigation("dashboard", "/")} className=" cursor-pointer selection:bg-[#ED2929]">
         <img src={Dashicon} className=" h-20 w-20" />
       </div>
 
       {/* Navigation Items */}
       <div className=" flex flex-col gap-6 ">
         {/* Home */}
-        <div className="flex flex-row items-center gap-3 cursor-pointer" onClick={() => handleNavigation("home", "/")}>
+        <div className="flex flex-row items-center gap-3 cursor-pointer selection:bg-white" onClick={() => handleNavigation("home", "/")}>
           <img src={activeTab === "home" ? Homeicon : HomeiconActive} className=" h-5 w-5" />
           <span className={`font-poppins text-sm font-medium ${activeTab === "home" ? "text-[#ED2929] font-semibold" : "text-white"}`}>Home</span>
         </div>
 
         {/* About */}
-        <div className="flex flex-row items-center gap-3 cursor-pointer" onClick={() => handleNavigation("about", "/about")}>
+        <div className="flex flex-row items-center gap-3 cursor-pointer selection:bg-white" onClick={() => handleNavigation("about", "/about")}>
           <img src={activeTab === "about" ? AboutActive : Abouticon} className=" h-5 w-5" />
           <span className={`font-poppins text-sm font-medium ${activeTab === "about" ? "text-[#ED2929] font-semibold" : "text-white"}`}>About</span>
         </div>
 
         {/* Service */}
-        <div className="flex flex-row items-center gap-3 cursor-pointer" onClick={() => handleNavigation("service", "/service")}>
+        <div className="flex flex-row items-center gap-3 cursor-pointer selection:bg-white" onClick={() => handleNavigation("service", "/service")}>
           <img src={activeTab === "service" ? Homeicon : Serviceicon} className=" h-5 w-5" />
           <span className={`font-poppins text-sm font-medium ${activeTab === "service" ? "text-[#ED2929] font-semibold" : "text-white"}`}>Service</span>
         </div>
 
         {/* Projects */}
-        <div className="flex flex-row items-center gap-3 cursor-pointer" onClick={() => handleNavigation("projects", "/projects")}>
+        <div className="flex flex-row items-center gap-3 cursor-pointer selection:bg-white" onClick={() => handleNavigation("projects", "/projects")}>
           <img src={activeTab === "projects" ? Homeicon : Projecticon} className=" h-5 w-5" />
           <span className={`font-poppins text-sm font-medium ${activeTab === "projects" ? "text-[#ED2929] font-semibold" : "text-white"}`}>Projects</span>
         </div>
 
         {/* Contact */}
-        <div className="flex flex-row items-center gap-3 cursor-pointer" onClick={() => handleNavigation("contact", "/contact")}>
+        <div className="flex flex-row items-center gap-3 cursor-pointer selection:bg-white" onClick={() => handleNavigation("contact", "/contact")}>
           <img src={activeTab === "contact" ? Homeicon : Contacticon} className=" h-5 w-5" />
           <span className={`font-poppins text-sm font-medium ${activeTab === "contact" ? "text-[#ED2929] font-semibold" : "text-white"}`}>Contact</span>
         </div>

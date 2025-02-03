@@ -21,7 +21,7 @@ const About: React.FC = () => {
                         </div>
                     </div>
                     <div className=' flex flex-col gap-2'>
-                        <p className=' font-poppins text-sm text-white font-semibold'>About Me</p>
+                        <p className=' font-poppins text-sm text-white font-semibold selection:bg-[#ED2929] '>About Me</p>
                         <div className=' flex flex-col gap-1'>
                             <div className=' bg-[#ED2929] w-16 h-1 rounded-lg' />
                             <div className=' bg-[#ED2929] w-10 h-1 rounded-lg' />
@@ -29,11 +29,11 @@ const About: React.FC = () => {
                     </div>
 
                     <div className=' py-6'>
-                        <p className=' font-poppins text-white text-sm '>I am Beni Samuel <span className=' text-[#ED2929] font-semibold'> Designer & Developer </span></p>
+                        <p className=' font-poppins text-white text-sm selection:bg-[#ED2929] '>I am Beni Samuel <span className=' text-[#ED2929] font-semibold selection:bg-white'> Designer & Developer </span></p>
                     </div>
 
                     <div>
-                        <p className=' font-poppins text-white text-sm leading-7 '>
+                        <p className=' font-poppins text-white text-sm leading-7 selection:bg-[#ED2929]'>
                             I am a passionate young software engineer driven by the mission to craft innovative solutions that address real-world <br/>
                             challenges, simplifying lives and transforming everyday experiences. <br /><br /><br />
 

@@ -14,7 +14,7 @@ const Home: React.FC = () => {
                     <div className=" absolute top-9 left-10 cursor-pointer md:hidden">
                         <img src={menu}/>
                     </div>
-                    <div className=" absolute top-9 right-10 flex flex-col gap-4">
+                    <div className=" absolute top-9 right-10 flex flex-col gap-4 selection:bg-[#ED2929]">
                         <div>
                             <img src={settings} className=" h-4 w-4 cursor-pointer"/>
                         </div>
@@ -24,22 +24,22 @@ const Home: React.FC = () => {
                     </div>
                     <div className=" flex flex-col gap-5">
                         <div className=" flex flex-col gap-3">
-                            <p className=" font-poppins text-white text-sm ">Hi, I am <span className=" font-bold text-[#ED2929]">Beni Samuel</span></p>
-                            <p className=" font-poppins text-white text-sm flex flex-row gap-3">I'm a <span className=" font-bold text-[#ED2929]"> <DynamicText /> </span></p>
+                            <p className=" font-poppins text-white text-sm selection:bg-[#ED2929] ">Hi, I am <span className=" font-bold text-[#ED2929] selection:bg-white ">Beni Samuel</span></p>
+                            <p className=" font-poppins text-white text-sm flex flex-row gap-3 selection:bg-[#ED2929] ">I'm a <span className=" font-bold text-[#ED2929] selection:bg-white "> <DynamicText /> </span></p>
                         </div>
                         <div>
-                            <p className=" font-poppins text-white text-sm leading-7">
+                            <p className=" font-poppins text-white text-sm leading-7 selection:bg-[#ED2929] ">
                                 I am a passionate young software engineer driven by the mission <br />
                                 to craft innovative solutions that address real-world challenges, <br />
                                 simplifying lives and transforming everyday experiences.
                             </p>
                         </div>
                         <div>
-                            <button className=" bg-[#ED2929] font-poppins text-white text-sm py-2 px-5 rounded-3xl">Download CV</button>
+                            <button className=" bg-[#ED2929] font-poppins text-white text-sm py-2 px-5 rounded-3xl selection:bg-[#ED2929] ">Download CV</button>
                         </div>
                     </div>
 
-                    <div className=" flex flex-row items-center justify-center ">
+                    <div className=" flex flex-row items-center justify-center selection:bg-white ">
                         <img src={myImage} className=" h-[20rem] w-[20rem]" />
                     </div>
                 </div>
