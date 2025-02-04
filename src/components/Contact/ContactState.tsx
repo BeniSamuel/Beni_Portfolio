@@ -4,7 +4,7 @@ import ContactTypes from "../../types/Contact/ContactTypes";
 const ContactState: React.FC<ContactTypes> = ({ section, setSection }) => {
   return (
     <div className="flex flex-row gap-12 py-7 px-4 items-center justify-center">
-      <div className="flex flex-row bg-[#171717] border-[#2F2C2C] border-2 gap-12 py-4 px-12 rounded-3xl items-center justify-center">
+      <div className="flex flex-row w-fit bg-[#171717] border-[#2F2C2C] border-2 gap-12 py-4 px-8 rounded-3xl items-center justify-center">
         <div
           onClick={() => setSection("mail")}
           className={`cursor-pointer text-white font-poppins text-sm ${
