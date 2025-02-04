@@ -3,6 +3,7 @@ import DashMain from '../../components/Dashboard/DashMain'
 import settings from "../../assets/Dashboard/settings.svg";
 import whiteMode from "../../assets/Dashboard/whiteMode.svg"
 import menu from "../../assets/Dashboard/menu.svg"
+import ContactMain from '../../components/Contact/ContactMain';
 
 const Contact: React.FC = () => {
   return (
@@ -29,7 +30,9 @@ const Contact: React.FC = () => {
               <div className=" bg-[#ED2929] w-10 h-1 rounded-lg" />
             </div>
           </div>
-          
+          <div>
+            <ContactMain />
+          </div>
         </div>
         </DashMain>
     </div>
