@@ -3,7 +3,7 @@ import embedded from "../assets/Service/embedded.svg";
 import cyber from "../assets/Service/cyberGuarding.svg";
 import serviceTypes from "../types/Service/ServiceTypes";
 
-const services: serviceTypes[]  = [
+const services: serviceTypes[] = [
   {
     id: 4,
     image: desktopApp,
