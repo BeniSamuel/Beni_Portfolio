@@ -142,7 +142,7 @@ const Home: React.FC = () => {
           getColorFilter={getColorFilter}
         />
 
-        <div className="flex flex-col md:flex-row py-[8rem] pl-10 items-center gap-20 relative z-10 h-[100vh]">
+        <div className="flex flex-col gap-20 md:flex-row py-[8rem] px-10 items-center md:justify-between md: pr-28 relative z-10 h-[100vh]">
           <motion.div
             onClick={() => setIsMobileMenuOpen(true)}
             className="absolute top-9 left-10 cursor-pointer md:hidden z-20 flex flex-col items-center justify-center
