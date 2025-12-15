@@ -4,7 +4,9 @@ import DashMain from "../../components/Dashboard/DashMain";
 import DynamicText from "../../components/Home/DynamicText";
 import ThemeControls from "../../components/Theme/ThemeControls";
 import { useThemeColors } from "../../hooks/useThemeColors";
-import myImage from "../../assets/Dashboard/Myimage.svg";
+import myMg from "../../assets/Dashboard/mymg.svg";
+import top from "../../assets/Dashboard/mytopicon.svg";
+import bottom from "../../assets/Dashboard/mybottomicon.svg";
 import menu from "../../assets/Dashboard/menu.svg";
 
 const Home: React.FC = () => {
@@ -199,16 +201,35 @@ const Home: React.FC = () => {
             animate="visible"
           >
             <motion.div className="relative" animate={floatingAnimation}>
-              <motion.img
-                src={myImage}
-                className="h-[20rem] w-[20rem] md:h-[25rem] md:w-[25rem]"
-                style={{
-                  filter: getColorFilter(themeColor),
-                }}
-                alt="Beni Samuel"
+              <motion.div
+                className=" relative"
                 whileHover={{ scale: 1.05, rotate: 5 }}
                 transition={{ duration: 0.3 }}
-              />
+              >
+                <motion.img
+                  src={top}
+                  className=" absolute top-[-3rem] left-[-2rem]"
+                  style={{
+                    filter: getColorFilter(themeColor),
+                  }}
+                  alt="Beni Samuel"
+                />
+                <motion.img
+                  src={myMg}
+                  className="h-[15rem] w-[15rem] md:h-[20rem] md:w-[20rem]"
+                  alt="Beni Samuel"
+                  whileHover={{ scale: 1.05, rotate: 5 }}
+                  transition={{ duration: 0.3 }}
+                />
+                <motion.img
+                  src={bottom}
+                  className=" absolute bottom-[-3rem] right-[-2rem]"
+                  style={{
+                    filter: getColorFilter(themeColor),
+                  }}
+                  alt="Beni Samuel"
+                />
+              </motion.div>
               <motion.div
                 className="absolute inset-0 border-2 rounded-full opacity-20"
                 style={{ borderColor: themeColor }}
