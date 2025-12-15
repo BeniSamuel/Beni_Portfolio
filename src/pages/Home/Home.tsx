@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react"; // ✅ added useState
 import { motion } from "framer-motion";
 import DashMain from "../../components/Dashboard/DashMain";
 import DynamicText from "../../components/Home/DynamicText";
@@ -8,18 +8,86 @@ import myMg from "../../assets/Dashboard/mymg.svg";
 import top from "../../assets/Dashboard/mytopicon.svg";
 import bottom from "../../assets/Dashboard/mybottomicon.svg";
 import menu from "../../assets/Dashboard/menu.svg";
+import { useNavigate, useLocation } from "react-router-dom";
+import MobileNav from "../../components/Dashboard/MobileNav";
+
+/* ✅ nav icons (ONLY for MobileNav) */
+import Homeicon from "../../assets/Dashboard/HomeIcon.svg";
+import HomeiconActive from "../../assets/Dashboard/HomeINotActive.svg";
+import Abouticon from "../../assets/Dashboard/AboutIcon.svg";
+import AboutActive from "../../assets/Dashboard/AboutActive.svg";
+import Serviceicon from "../../assets/Dashboard/ServiceIcon.svg";
+import ServiceActive from "../../assets/Dashboard/ServiceActive.svg";
+import Projecticon from "../../assets/Dashboard/ProjectsIcon.svg";
+import ProjectActive from "../../assets/Dashboard/ProjectsActive.svg";
+import Contacticon from "../../assets/Dashboard/ContactIcon.svg";
+import ContactActive from "../../assets/Dashboard/ContactActive.svg";
 
 const Home: React.FC = () => {
   const { themeColor, rgba } = useThemeColors();
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [activeTab, setActiveTab] = useState("");
+
+  const navItems = [
+    {
+      id: "home",
+      icon: Homeicon,
+      activeIcon: HomeiconActive,
+      label: "Home",
+      route: "/",
+    },
+    {
+      id: "about",
+      icon: Abouticon,
+      activeIcon: AboutActive,
+      label: "About",
+      route: "/about",
+    },
+    {
+      id: "service",
+      icon: Serviceicon,
+      activeIcon: ServiceActive,
+      label: "Service",
+      route: "/service",
+    },
+    {
+      id: "projects",
+      icon: Projecticon,
+      activeIcon: ProjectActive,
+      label: "Projects",
+      route: "/projects",
+    },
+    {
+      id: "contact",
+      icon: Contacticon,
+      activeIcon: ContactActive,
+      label: "Contact",
+      route: "/contact",
+    },
+  ];
+
+  React.useEffect(() => {
+    const path = location.pathname;
+    if (path === "/") setActiveTab("home");
+    else if (path.startsWith("/about")) setActiveTab("about");
+    else if (path.startsWith("/service")) setActiveTab("service");
+    else if (path.startsWith("/projects")) setActiveTab("projects");
+    else if (path.startsWith("/contact")) setActiveTab("contact");
+  }, [location.pathname]);
+
+  const handleNavigation = (tab: string, route: string) => {
+    setActiveTab(tab);
+    navigate(route);
+  };
 
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.1,
-      },
+      transition: { staggerChildren: 0.2, delayChildren: 0.1 },
     },
   };
 
@@ -28,10 +96,7 @@ const Home: React.FC = () => {
     visible: {
       opacity: 1,
       y: 0,
-      transition: {
-        duration: 0.6,
-        ease: "easeOut",
-      },
+      transition: { duration: 0.6, ease: "easeOut" },
     },
   };
 
@@ -41,76 +106,55 @@ const Home: React.FC = () => {
       opacity: 1,
       scale: 1,
       rotate: 0,
-      transition: {
-        duration: 0.8,
-        ease: "easeOut",
-      },
+      transition: { duration: 0.8, ease: "easeOut" },
     },
   };
 
   const floatingAnimation = {
     y: [0, -20, 0],
-    transition: {
-      duration: 3,
-      repeat: Infinity,
-      ease: "easeInOut",
-    },
+    transition: { duration: 3, repeat: Infinity, ease: "easeInOut" },
   };
 
   const getColorFilter = (hex: string): string => {
     const colorFilters: Record<string, string> = {
       "#ED2929":
-        "invert(27%) sepia(91%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%)", // Red
+        "invert(27%) sepia(91%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%)",
       "#22C55E":
-        "invert(68%) sepia(95%) saturate(427%) hue-rotate(88deg) brightness(118%) contrast(85%)", // Green
+        "invert(68%) sepia(95%) saturate(427%) hue-rotate(88deg) brightness(118%) contrast(85%)",
       "#3B82F6":
-        "invert(48%) sepia(99%) saturate(2476%) hue-rotate(202deg) brightness(98%) contrast(96%)", // Blue
+        "invert(48%) sepia(99%) saturate(2476%) hue-rotate(202deg) brightness(98%) contrast(96%)",
       "#F97316":
-        "invert(60%) sepia(98%) saturate(2476%) hue-rotate(1deg) brightness(102%) contrast(96%)", // Orange
+        "invert(60%) sepia(98%) saturate(2476%) hue-rotate(1deg) brightness(102%) contrast(96%)",
     };
-
     return colorFilters[hex] || "brightness(0) saturate(100%) invert(1)";
   };
 
   return (
     <div className="relative overflow-hidden">
-      {/* Animated background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#020202] via-[#0a0a0a] to-[#020202] opacity-50" />
-      <motion.div
-        className="absolute top-20 right-20 w-96 h-96 bg-[#ED2929] rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-blob"
-        animate={{
-          scale: [1, 1.2, 1],
-          x: [0, 50, 0],
-          y: [0, 30, 0],
-        }}
-        transition={{
-          duration: 8,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-      />
-      <motion.div
-        className="absolute bottom-20 left-20 w-96 h-96 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-blob"
-        animate={{
-          scale: [1, 1.3, 1],
-          x: [0, -30, 0],
-          y: [0, -50, 0],
-        }}
-        transition={{
-          duration: 10,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-      />
-
       <DashMain>
-        <div className="flex flex-col md:flex-row py-[8rem] pl-10 items-center gap-16 relative z-10">
+        <MobileNav
+          isOpen={isMobileMenuOpen}
+          onClose={() => setIsMobileMenuOpen(false)}
+          navItems={navItems}
+          activeTab={activeTab}
+          onNavigate={handleNavigation}
+          themeColor={themeColor}
+          getColorFilter={getColorFilter}
+        />
+
+        <div className="flex flex-col md:flex-row py-[8rem] pl-10 items-center gap-20 relative z-10 h-[100vh]">
           <motion.div
-            className="absolute top-9 left-10 cursor-pointer md:hidden z-20"
+            onClick={() => setIsMobileMenuOpen(true)}
+            className="absolute top-9 left-10 cursor-pointer md:hidden z-20 flex flex-col items-center justify-center
+                       bg-gradient-to-br from-[#171717] to-[#1a1a1a] border-[#2F2C2C] border-2 p-2 rounded-md"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
           >
-            <img src={menu} alt="menu" />
+            <img
+              src={menu}
+              alt="menu"
+              style={{ filter: getColorFilter(themeColor) }}
+            />
           </motion.div>
           <ThemeControls />
 
